@@ -86,11 +86,11 @@ namespace LFIAzureDotNetCore.Controllers
                 bytes = System.IO.File.ReadAllBytes(path);
             }
 
-            catch (Exception e) {
+            catch (Exception ex) {
                 
                 Console.WriteLine("Error occurred while downloading the file: " + ex.Message);
 
-                Console.WriteLine(e.StackTrace);
+                Console.WriteLine(ex.StackTrace);
 
                  return null;
 
