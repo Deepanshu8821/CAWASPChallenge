@@ -64,7 +64,8 @@ namespace LFIAzureDotNetCore.Controllers
         public FileResult DownloadFile(string fileName)
         {
             //Build the File Path.
-            string path = Path.Combine(this.Environment.WebRootPath, "Files/") + fileName;
+            // string path = Path.Combine(this.Environment.WebRootPath, "Files/") + fileName;
+            string path = Path.Combine(this.Environment.WebRootPath, fileName);
 
 
             Console.WriteLine($"Trying to download file from path: {filePath}");
