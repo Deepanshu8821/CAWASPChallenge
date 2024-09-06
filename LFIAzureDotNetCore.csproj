@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\Files\samplefolder.zip" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\Files\samplefolder.zip" />
+  </ItemGroup>
+
+</Project>
