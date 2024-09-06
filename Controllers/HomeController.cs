@@ -68,12 +68,12 @@ namespace LFIAzureDotNetCore.Controllers
             string path = Path.Combine(this.Environment.WebRootPath, fileName);
 
 
-            Console.WriteLine($"Trying to download file from path: {filePath}");
+            Console.WriteLine($"Trying to download file from path: {path}");
 
             // Check if the file exists to avoid exceptions.
-            if (!System.IO.File.Exists(filePath))
+            if (!System.IO.File.Exists(path))
             {
-                Console.WriteLine($"File not found: {filePath}");
+                Console.WriteLine($"File not found: {path}");
                 return null; // You can return an appropriate error view or message.
             }
 
