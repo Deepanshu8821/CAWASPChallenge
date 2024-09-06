@@ -67,7 +67,14 @@ namespace LFIAzureDotNetCore.Controllers
             string path = Path.Combine(this.Environment.WebRootPath, "Files/") + fileName;
 
 
-            Console.WriteLine("my path is "+path);
+            Console.WriteLine($"Trying to download file from path: {filePath}");
+
+            // Check if the file exists to avoid exceptions.
+            if (!System.IO.File.Exists(filePath))
+            {
+                Console.WriteLine($"File not found: {filePath}");
+                return null; // You can return an appropriate error view or message.
+            }
 
             //Read the File data into Byte Array.
             byte[] bytes = null;
@@ -79,10 +86,12 @@ namespace LFIAzureDotNetCore.Controllers
             }
 
             catch (Exception e) {
+                
+                Console.WriteLine("Error occurred while downloading the file: " + ex.Message);
 
                 Console.WriteLine(e.StackTrace);
 
-                bytes = System.IO.File.ReadAllBytes(fileName);
+                 return null;
 
             }
 
